@@ -9,12 +9,13 @@ import "fmt"
 找到windows项目的.git目录,修改config文件，在 [core] 配置项添加一行即可。
 autocrlf = false*/
 
+//选择排序的要点是游标为minIndex，不断的和该游标进行比较即可==>和冒泡排序的区别和相同？
 func sort_select(nums []int) []int {
 	n := len(nums)
 	for i, _ := range nums {
 		minIndex := i
 		for j := i + 1; j < n; j++ {
-			if nums[j] < nums[minIndex] {
+			if nums[minIndex] > nums[j] {
 				nums[minIndex], nums[j] = nums[j], nums[minIndex]
 			}
 		}

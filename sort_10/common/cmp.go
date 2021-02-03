@@ -1,4 +1,4 @@
-package common
+package common_util
 
 //Use to compare slice int type
 func IntSliceEqual(a, b []int) bool {
