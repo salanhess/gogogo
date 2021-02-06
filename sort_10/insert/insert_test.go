@@ -6,11 +6,11 @@ import (
 	"testing"
 )
 
-func Test_sort(t *testing.T) {
+func Test_sort_Insert(t *testing.T) {
 	tests := common_util.Tests
 	for _, tt := range tests {
 		t.Run(tt.Name, func(t *testing.T) {
-			if got := sort_select(tt.Args.Nums); !reflect.DeepEqual(got, tt.Want) {
+			if got := sort_insert(tt.Args.Nums); !reflect.DeepEqual(got, tt.Want) {
 				t.Errorf("sort_select() = %v, want %v", got, tt.Want)
 			}
 		})

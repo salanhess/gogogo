@@ -1,28 +1,39 @@
 package main
 
 import (
+	"gogogo/sort_10/common"
 	"reflect"
 	"testing"
 )
 
-func Test_sort_bubble(t *testing.T) {
-	type args struct {
-		nums []int
-	}
-	tests := []struct {
-		name string
-		args args
-		want []int
-	}{
-		// TODO: Add test cases.
-		{"case1:", args{[]int{1, 2, 3, 4}}, []int{1, 2, 3, 4}},
-		{"case2:", args{[]int{4, 2, 3, 1}}, []int{1, 2, 3, 4}},
-		{"case3:", args{[]int{11, 12, 3, 14}}, []int{3, 11, 12, 14}},
-	}
+func Test_sort1(t *testing.T) {
+	tests := common_util.Tests
 	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := sort_bubble(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("sort_bubble() = %v, want %v", got, tt.want)
+		t.Run(tt.Name, func(t *testing.T) {
+			if got := sort_bubble(tt.Args.Nums); !reflect.DeepEqual(got, tt.Want) {
+				t.Errorf("sort_select() = %v, want %v", got, tt.Want)
+			}
+		})
+	}
+}
+
+func Test_sort2(t *testing.T) {
+	tests := common_util.Tests
+	for _, tt := range tests {
+		t.Run(tt.Name, func(t *testing.T) {
+			if got := sort_bubble2(tt.Args.Nums); !reflect.DeepEqual(got, tt.Want) {
+				t.Errorf("sort_select() = %v, want %v", got, tt.Want)
+			}
+		})
+	}
+}
+
+func Test_sort3(t *testing.T) {
+	tests := common_util.Tests
+	for _, tt := range tests {
+		t.Run(tt.Name, func(t *testing.T) {
+			if got := sort_bubble3(tt.Args.Nums); !reflect.DeepEqual(got, tt.Want) {
+				t.Errorf("sort_select() = %v, want %v", got, tt.Want)
 			}
 		})
 	}
