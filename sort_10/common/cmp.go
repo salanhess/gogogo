@@ -1,5 +1,12 @@
 package common_util
 
+var (
+	Nums1 []int = []int{1, 2, 6, 4, 7, 8, 9}
+	Nums2 []int = []int{4, 3, 2, 1, 7, 8, 9}
+	Nums3 []int = []int{9, 8, 7, 4, 3, 2, 1}
+	Nums4 []int = []int{1, 2, 3, 4, 7, 8, 9}
+)
+
 type args struct {
 	Nums []int
 }

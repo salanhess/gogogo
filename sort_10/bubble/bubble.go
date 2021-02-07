@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	common_util "gogogo/sort_10/common"
+)
 
 /*冒泡需要比较的值为nums[i],需要大值逐渐冒泡到最底层 保证最小的在最前面
 num[j],num[j+1]进行比较,注意边界
@@ -78,18 +81,20 @@ func sort_bubble(nums []int) []int {
 }
 
 func main() {
-	n := []int{1, 2, 6, 4, 7, 8, 9}
+	n := common_util.Nums1
+	fmt.Printf("Before sort: n is %v \n========\n", n)
 	fmt.Println(sort_bubble(n))
+	fmt.Printf("After sort: n is %v \n========\n", n)
 	n = []int{1, 2, 6, 4, 7, 8, 9}
 	fmt.Println(sort_bubble2(n))
 	n = []int{1, 2, 6, 4, 7, 8, 9}
 	fmt.Println(sort_bubble3(n))
 
 	fmt.Println("====================")
-	n = []int{1, 2, 3, 4, 7, 8, 9}
+	n = []int{4, 3, 2, 1, 7, 8, 9}
 	fmt.Println(sort_bubble(n))
-	n = []int{1, 2, 3, 4, 7, 8, 9}
+	n = []int{4, 3, 2, 1, 7, 8, 9}
 	fmt.Println(sort_bubble2(n))
-	n = []int{1, 2, 3, 4, 7, 8, 9}
+	n = []int{4, 3, 2, 1, 7, 8, 9}
 	fmt.Println(sort_bubble3(n))
 }
