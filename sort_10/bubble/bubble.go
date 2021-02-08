@@ -13,6 +13,22 @@ num[j],num[j+1]进行比较,注意边界
 [r4]1 2
 可优化*/
 
+func sort_bubble_r(nums []int) []int {
+	n := len(nums)
+	var swapCount, handleCount int
+	for i, _ := range nums {
+		for j := 0; j < n-i-1; j++ {
+			if nums[j] > nums[j+1] {
+				nums[j], nums[j+1] = nums[j+1], nums[j]
+				swapCount++
+			}
+			handleCount++
+		}
+	}
+	fmt.Println("[bubble_r]handleCount:", handleCount, " swapCount:", swapCount)
+	return nums
+}
+
 //优化一仅仅适用于连片有序而整体无序的数据(例如：1， 2，3 ，4 ，7，6，5)。
 //但是对于前面大部分是无序而后边小半部分有序的数据(1，2，5，7，4，3，6，8，9，10)排序效率也不可观
 //我们可以继续优化。既我们可以记下最后一次交换的位置，后边没有交换，必然是有序的，
@@ -89,7 +105,8 @@ func main() {
 	fmt.Println(sort_bubble2(n))
 	n = []int{1, 2, 6, 4, 7, 8, 9}
 	fmt.Println(sort_bubble3(n))
-
+	n = []int{1, 2, 6, 4, 7, 8, 9}
+	fmt.Println(sort_bubble_r(n))
 	fmt.Println("====================")
 	n = []int{4, 3, 2, 1, 7, 8, 9}
 	fmt.Println(sort_bubble(n))
@@ -97,4 +114,6 @@ func main() {
 	fmt.Println(sort_bubble2(n))
 	n = []int{4, 3, 2, 1, 7, 8, 9}
 	fmt.Println(sort_bubble3(n))
+	n = []int{4, 3, 2, 1, 7, 8, 9}
+	fmt.Println(sort_bubble_r(n))
 }
