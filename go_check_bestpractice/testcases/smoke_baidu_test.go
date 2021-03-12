@@ -2,7 +2,7 @@ package smoke_test
 
 /*
 	用例说明：
-	创建一个云硬盘，创建云硬盘成功 和过滤结果一致
+
 */
 
 import (
@@ -22,6 +22,12 @@ var params = &model.GetBaiduParams{
 	//Hello:       &steps.Envcfg.Greeting,
 	Hello: "json",
 }
+
+var _ = Suite(&scenario.HelloBaidu{
+	Ctx:     context,
+	SendReq: params,
+	Desc:    "2_smoke_req_test",
+})
 
 // 创建云硬盘，并查看云硬盘状态，直到云硬盘状态为available
 var _ = Suite(&scenario.HelloBaidu{

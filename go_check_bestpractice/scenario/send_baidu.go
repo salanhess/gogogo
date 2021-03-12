@@ -32,10 +32,10 @@ func (scenario *HelloBaidu) TearDownSuite(c *C) {
 }
 
 func (scenario *HelloBaidu) TestList(c *C) {
-	log.Printf("[HelloBaidu][Info][TestList]%s\n", scenario.Desc)
+	log.Printf("[HelloBaidu][Info1][TestList]%s\n", scenario.Desc)
 }
 
 func (scenario *HelloBaidu) TestDescribe(c *C) {
-	log.Printf("[HelloBaidu][Info][TestDescribe]%s %v \n", scenario.Desc, *scenario.SendReq)
+	log.Printf("[HelloBaidu][Info2][TestDescribe]%s %v \n", scenario.Desc, *scenario.SendReq)
 
 }
